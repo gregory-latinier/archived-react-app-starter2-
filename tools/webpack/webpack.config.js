@@ -1,13 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-const outputDirectory = 'dist';
 
 module.exports = {
     entry: './src/client/index.js',
     output: {
-        path: path.join(__dirname, outputDirectory),
+        path: path.join(__dirname, '..', '..', 'dist'),
         filename: 'bundle.js'
     },
     module: {
@@ -29,7 +26,6 @@ module.exports = {
         }
     },
     plugins: [
-        new CleanWebpackPlugin([outputDirectory]),
         new HtmlWebpackPlugin({
             template: './src/client/template/index.html',
         })
